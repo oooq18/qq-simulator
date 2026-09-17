@@ -270,20 +270,21 @@
     <!-- 页面顶部导航区 -->
     <div class="box1">
         <div class="box1_left">
-            <img src="img/qq/qui_chevron_left.png" alt="返回">
+            <img src="img/18.png" alt="返回">
         </div>
         <div class="box1_right">
             <div class="box1_right_div">
-                <img src="img/qq/qui_share.png" alt="分享">
+                <img src="img/二维码.jpg" alt="二维码">
             </div>
             <div class="box1_right_div">
-                <img src="img/qq/qui_more.png" alt="更多">
+                <img src="img/17.2.png" id="img1" alt="闹铃">
+            </div>
+            <div class="box1_right_div3">
+                <img src="img/17.png" alt="菜单">
             </div>
         </div>
-    </div>
 
-    <!-- 封面区域 -->
-    <div class="profile-cover"></div>
+    </div>
 
     <!-- 个人资料头部区域 -->
     <div class="box2">
@@ -311,7 +312,7 @@
         </div>
         <!-- 点赞数 -->
         <div class="good">
-            <img src="img/qq/qui_like_filled.png" alt="点赞">
+            <img src="img/good.png" alt="点赞">
             <p id="good"></p>
         </div>
     </div>
