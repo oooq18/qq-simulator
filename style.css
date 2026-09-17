@@ -667,3 +667,195 @@ input[name="imageSelect"] {
   padding: 0;
   margin-right: 0.5rem;
 }
+/* ===============================================
+   QQ个人主页真实风格样式（从APK反编译提取）
+   =============================================== */
+
+:root {
+  --qq-blue: #0099ff;
+  --qq-blue-dark: #0079ff;
+  --qq-bg: #f5f5f5;
+  --qq-card-bg: #ffffff;
+  --qq-text-primary: #1a1a1a;
+  --qq-text-secondary: #888888;
+  --qq-gold: #c98e34;
+  --qq-border: #e5e5e5;
+  --qq-radius: 8px;
+}
+
+body {
+  background-color: #f5f5f5 !important;
+  color: #1a1a1a;
+}
+
+.box1 {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin: -1rem -1rem 0 -1rem;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box1 .box1_left,
+.box1 .box1_right .box1_right_div,
+.box1_right_div3 {
+  background-color: transparent !important;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box2 {
+  background: #ffffff;
+  margin: 0 -1rem;
+  padding: 1rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+}
+
+.box2 .avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-right: 0.8rem;
+}
+
+.box2 h2 {
+  color: #1a1a1a !important;
+  font-weight: 600 !important;
+  font-size: 1.1rem !important;
+}
+
+.box2 button {
+  background-color: #0099ff !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 1rem !important;
+  font-size: 0.65rem !important;
+  padding: 0.25rem 0.6rem !important;
+  height: auto !important;
+}
+
+.box2 .good {
+  background-color: rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10 {
+  background: #ffffff;
+  margin: 0.6rem -1rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box3 {
+  margin-top: 0.6rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.box10 {
+  border-radius: 0 0 8px 8px;
+  border-bottom: none;
+  margin-bottom: 5rem;
+}
+
+.box5 {
+  color: #888888 !important;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.box7_right img {
+  height: 1.1rem !important;
+  margin-right: 0.3rem !important;
+}
+
+.box8 .box7_right img {
+  height: 1.8rem !important;
+}
+
+.level-container img {
+  height: 1rem !important;
+}
+
+.last {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid #e5e5e5;
+  padding: 0.8rem 1rem;
+  bottom: 0;
+}
+
+.last button {
+  border-radius: 8px !important;
+  border: 1px solid #e5e5e5 !important;
+  background-color: #fff !important;
+  height: 2.5rem !important;
+  padding-bottom: 0 !important;
+}
+
+.last button:last-child {
+  background-color: #0099ff !important;
+  border-color: #0099ff !important;
+}
+
+.last span {
+  color: #1a1a1a !important;
+  font-size: 0.9rem !important;
+  font-weight: 500;
+}
+
+.last button:last-child span {
+  color: #fff !important;
+}
+
+.modal-content {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+}
+
+#editForm input[type="submit"] {
+  background-color: #0099ff !important;
+  border-radius: 8px;
+}
+
+input[name="levelIconStyle"]:checked+.icon-style-label,
+input[name="imageSelect"]:checked+.vip-label {
+  border-color: #0099ff !important;
+  background-color: rgba(0,153,255,0.1) !important;
+}
+
+.story-container {
+  background: #ffffff;
+  margin: 0 -1rem 1rem -1rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  width: auto;
+}
+
+.story-item {
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+
+.add-story {
+  background-color: #f8f8f8;
+  border: 1px dashed #e5e5e5;
+}
+
+.add-story-icon, .add-story p {
+  color: #0099ff !important;
+}
