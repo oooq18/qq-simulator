@@ -267,201 +267,168 @@
 <body>
 
 
-    <!-- 页面顶部导航区 -->
+    <!-- 页面顶部导航区（无标题，深色透明） -->
     <div class="box1">
         <div class="box1_left">
             <img src="img/qq/qui_chevron_left.png" alt="返回">
         </div>
-        <span class="nav-title">个人资料</span>
         <div class="box1_right">
             <div class="box1_right_div">
-                <img src="img/qq/qui_more.png" alt="更多">
+                <img src="img/二维码.jpg" alt="扫一扫">
+            </div>
+            <div class="box1_right_div">
+                <img src="img/17.2.png" alt="通知">
+            </div>
+            <div class="box1_right_div3">
+                <img src="img/qq/qui_setting.png" alt="设置">
             </div>
         </div>
     </div>
 
     <!-- 封面区域 -->
-    <div class="profile-cover"></div>
-
-    <!-- 个人资料头部区域 -->
-    <div class="box2">
-        <div class="profile-main">
-            <!-- 头像 -->
-            <img src="img/image7.png" id="avatar" class="avatar" alt="头像">
-            <div class="user-info">
-                <div class="name-status-row">
-                    <!-- 名字 -->
-                    <h2 id="name"></h2>
-                    <!-- 状态按钮 -->
-                    <button>
-                        <img src="img/14.png" alt="状态图标">
-                        <p>状态</p>
-                    </button>
-                </div>
-                <!-- 性别、年龄、省份、城市 -->
-                <div class="personal-details">
-                    <span id="gender"></span>
-                    <span id="age"></span>
-                    <span id="province"></span>
-                    <span id="city"></span>
-                </div>
-            </div>
-        </div>
-        <!-- 点赞数 -->
+    <div class="profile-cover">
+        <!-- 点赞按钮 -->
         <div class="good">
             <img src="img/qq/qui_like_filled.png" alt="点赞">
             <p id="good"></p>
         </div>
     </div>
 
-    <!-- QQ号码区域 -->
-    <div class="box box3">
-        <img src="img/6.png" class="list" alt="QQ图标">
-        <div>
-            <section>
-                <!-- 靓号图标 -->
-                <span>
-                    <img src="img/35.png" class="i2" id="img19" alt="">
-                </span>
-
-                <!-- 这是QQ号 -->
-                <p id="qq_number">1234567</p>
-            </section>
-            <img src="img/20.png" class="i3" alt="">
+    <!-- 资料卡主体（深色背景，顶部圆角） -->
+    <div class="profile-card">
+        <!-- 个人资料头部区域 -->
+        <div class="box2">
+            <div class="profile-main">
+                <!-- 头像 -->
+                <img src="img/image7.png" id="avatar" class="avatar" alt="头像">
+                <div class="user-info">
+                    <div class="name-status-row">
+                        <!-- 名字 -->
+                        <h2 id="name"></h2>
+                        <!-- 状态按钮 -->
+                        <button class="status-btn">
+                            <img src="img/14.png" alt="状态图标">
+                            <span>状态</span>
+                        </button>
+                    </div>
+                    <!-- QQ号 + ID -->
+                    <div class="qq-number-row">
+                        <span class="qq-label">QQ:</span>
+                        <span id="qq_number" class="qq-num">1234567</span>
+                        <span class="id-badge">
+                            <img src="img/35.png" class="i2" id="img19" alt="">
+                            <span>ID</span>
+                            <img src="img/15.png" class="id-arrow" alt="">
+                        </span>
+                    </div>
+                </div>
+                <!-- 右侧角色立绘 -->
+                <div class="profile-character">
+                    <img src="img/value/IMG_5.png" alt="角色">
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- 公司图标区域 -->
-    <div class="box box4" style="display: none;">
-        <img src="img/7.png" class="list" alt="签名图标">
-        <div>
-            <p id="sign"></p>
+        <!-- 个性签名行 -->
+        <div class="profile-row signature-row">
+            <span class="row-text" id="sign">编辑个签，展示我的独特态度</span>
+            <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
-    </div>
 
-    <!-- 详细资料区域 -->
-    <div class="box box5">
-        <img src="img/7.png" style="opacity: 0" class="list" alt="">
-        <div>
-            <p>详细资料</p>
+        <!-- 性别/生日/星座行 -->
+        <div class="profile-row info-row">
+            <span class="gender-icon">♂</span>
+            <span id="gender" class="gender-text">男</span>
+            <span class="divider">|</span>
+            <span id="age">3月13日</span>
+            <span id="province">双鱼座</span>
+            <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
-        <img src="img/15.png" class="right" alt="箭头">
-    </div>
 
-    <!-- 个性签名区域 -->
-    <div class="box box6">
-        <img src="img/5.png" class="list" alt="编辑图标">
-        <div>
-            <p>编辑个签，展示我的独特态度</p>
+        <!-- 等级信息行 -->
+        <div class="profile-row level-row">
+            <div class="level-icons">
+                <img id="energyIcon" src="img/33.png" alt="能量值">
+                <img src="img/1.webp" alt="大V1" style="display:none;">
+                <img src="img/2.webp" alt="大V2" style="display:none;">
+                <img src="img/3.webp" alt="大V3" style="display:none;">
+                <img src="img/4.webp" alt="大V4" style="display:none;">
+                <img src="img/9.gif" id="dynamicIcon" alt="动态图标">
+                <span id="levelIconContainer" class="level-container qq-level-icons"></span>
+                <img src="img/IMG_9007.png" class="medal-icon" alt="勋章">
+            </div>
+            <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
-        <img src="img/15.png" class="right" alt="箭头">
-    </div>
 
-    <!-- 等级信息区域 -->
-    <div class="box box7">
-        <img src="img/4.png" class="list" alt="等级图标">
-        <div class="box7_right">
-            <img id="energyIcon" src="img/33.png" alt="能量值图标">
-            <!-- 大V图标组 - 通过JavaScript控制显示/隐藏，默认隐藏 -->
-            <img src="img/1.webp" alt="大V图标1" style="display: none;">
-            <img src="img/2.webp" alt="大V图标2" style="display: none;">
-            <img src="img/3.webp" alt="大V图标3" style="display: none;">
-            <img src="img/4.webp" alt="大V图标4" style="display: none;">
-            <img src="img/9.gif" id="dynamicIcon" alt="动态图标">
-            <!-- 等级图标容器 -->
-            <span id="levelIconContainer" class="level-container qq-level-icons"></span>
-            <img src="img/IMG_9007.png" alt="勋章" style="height: 1rem; margin-left: 0.2rem;">
+        <!-- 会员图标行 -->
+        <div class="profile-row vip-row">
+            <div class="box7_right" id="vip-icons-container">
+                <img id="vip-icon-1" src="img/大会员.png" data-color-src="./img/大会员.png" data-gray-src="" alt="大会员" style="display:none;">
+                <img id="vip-icon-2" src="img/21.png" data-color-src="./img/21.png" data-gray-src="" alt="会员1" style="display:none;">
+                <img id="vip-icon-3" src="img/22.png" data-color-src="./img/22.png" data-gray-src="" alt="会员2" style="display:none;">
+                <img id="vip-icon-4" src="img/23.png" data-color-src="./img/23.png" data-gray-src="" alt="会员3" style="display:none;">
+                <img id="vip-icon-5" src="img/31.png" data-color-src="./img/31.png" data-gray-src="" alt="会员4" style="display:none;">
+                <img id="vip-icon-6" src="img/39.png" data-color-src="./img/39.png" data-gray-src="" alt="会员5" style="display:none;">
+                <img id="vip-icon-7" src="img/36.png" data-color-src="./img/36.png" data-gray-src="" alt="会员6" style="display:none;">
+                <img id="vip-icon-8" src="img/37.png" data-color-src="./img/37.png" data-gray-src="" alt="会员7" style="display:none;">
+                <img id="vip-icon-9" src="img/38.png" data-color-src="./img/38.png" data-gray-src="" alt="会员8" style="display:none;">
+                <img id="vip-icon-10" src="img/25.png" data-color-src="./img/25.png" data-gray-src="" alt="装饰1" style="display:none;">
+                <img id="vip-icon-11" src="img/25.1.png" data-color-src="./img/25.1.png" data-gray-src="" alt="装饰2" style="display:none;">
+                <img id="vip-icon-12" src="img/26.png" data-color-src="./img/26.png" data-gray-src="" alt="装饰3" style="display:none;">
+                <img id="vip-icon-13" src="img/27.png" data-color-src="./img/27.png" data-gray-src="" alt="装饰4" style="display:none;">
+                <img id="vip-icon-14" src="img/28.png" data-color-src="./img/28.png" data-gray-src="" alt="装饰5" style="display:none;">
+                <img id="vip-icon-15" src="img/29.png" data-color-src="./img/29.png" data-gray-src="" alt="装饰6" style="display:none;">
+                <img id="vip-icon-16" src="./img/member/40.png" data-color-src="./img/member/40.png" data-gray-src="" alt="大会员2" style="display:none;">
+                <img id="vip-icon-17" src="./img/member/41.png" data-color-src="./img/member/41.png" data-gray-src="" alt="大会员3" style="display:none;">
+                <img id="vip-icon-18" src="./img/member/42.png" data-color-src="./img/member/42.png" data-gray-src="" alt="大会员4" style="display:none;">
+                <img id="vip-icon-19" src="./img/member/43.png" data-color-src="./img/member/43.png" data-gray-src="" alt="大会员5" style="display:none;">
+                <img id="vip-icon-20" src="./img/member/3.png" data-color-src="./img/member/3.png" data-gray-src="" alt="黄钻1" style="display:none;">
+                <img id="vip-icon-21" src="./img/member/5.png" data-color-src="./img/member/5.png" data-gray-src="" alt="黄钻2" style="display:none;">
+            </div>
+            <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
-        <img src="img/15.png" class="right" alt="箭头">
-    </div>
 
-    <!-- 会员图标区域 -->
-    <div class="box box8">
-        <img src="img/3.png" class="list" alt="会员图标">
-        <div class="box7_right" id="vip-icons-container">
-            <img id="vip-icon-1" src="img/大会员.png" data-color-src="./img/大会员.png"
-                data-gray-src="" alt="大会员" style="display: none;">
-            <img id="vip-icon-2" src="img/21.png" data-color-src="./img/21.png"
-                data-gray-src="" alt="会员图标1" style="display: none;">
-            <img id="vip-icon-3" src="img/22.png" data-color-src="./img/22.png"
-                data-gray-src="" alt="会员图标2" style="display: none;">
-            <img id="vip-icon-4" src="img/23.png" data-color-src="./img/23.png"
-                data-gray-src="" alt="会员图标3" style="display: none;">
-            <img id="vip-icon-5" src="img/31.png" data-color-src="./img/31.png"
-                data-gray-src="" alt="会员图标4" style="display: none;">
-            <img id="vip-icon-6" src="img/39.png" data-color-src="./img/39.png"
-                data-gray-src="" alt="会员图标5" style="display: none;">
-            <img id="vip-icon-7" src="img/36.png" data-color-src="./img/36.png"
-                data-gray-src="" alt="会员图标6" style="display: none;">
-            <img id="vip-icon-8" src="img/37.png" data-color-src="./img/37.png"
-                data-gray-src="" alt="会员图标7" style="display: none;">
-            <img id="vip-icon-9" src="img/38.png" data-color-src="./img/38.png"
-                data-gray-src="" alt="会员图标8" style="display: none;">
-            <img id="vip-icon-10" src="img/25.png" data-color-src="./img/25.png"
-                data-gray-src="" alt="装饰图标1" style="display: none;">
-            <img id="vip-icon-11" src="img/25.1.png" data-color-src="./img/25.1.png"
-                data-gray-src="" alt="装饰图标2" style="display: none;">
-            <img id="vip-icon-12" src="img/26.png" data-color-src="./img/26.png"
-                data-gray-src="" alt="装饰图标3" style="display: none;">
-            <img id="vip-icon-13" src="img/27.png" data-color-src="./img/27.png" data-gray-src="" alt="装饰图标4"
-                style="display: none;">
-            <img id="vip-icon-14" src="img/28.png" data-color-src="./img/28.png" data-gray-src="" alt="装饰图标5"
-                style="display: none;">
-            <img id="vip-icon-15" src="img/29.png" data-color-src="./img/29.png" data-gray-src="" alt="装饰图标6"
-                style="display: none;">
-            <img id="vip-icon-16" src="./img/member/40.png" data-color-src="./img/member/40.png"
-                data-gray-src="" alt="大会员2" style="display: none;">
-            <img id="vip-icon-17" src="./img/member/41.png" data-color-src="./img/member/41.png"
-                data-gray-src="" alt="大会员3" style="display: none;">
-            <img id="vip-icon-18" src="./img/member/42.png" data-color-src="./img/member/42.png"
-                data-gray-src="" alt="大会员4" style="display: none;">
-            <img id="vip-icon-19" src="./img/member/43.png" data-color-src="./img/member/43.png"
-                data-gray-src="" alt="大会员5" style="display: none;">
-            <img id="vip-icon-20" src="./img/member/3.png" data-color-src="./img/member/3.png"
-                data-gray-src="" alt="黄钻图标1" style="display: none;">
-            <img id="vip-icon-21" src="./img/member/5.png" data-color-src="./img/member/5.png"
-                data-gray-src="" alt="黄钻图标2" style="display: none;">
+        <!-- 兴趣标签行 -->
+        <div class="profile-row tags-row">
+            <div class="tags-container">
+                <span class="tag">刘慈欣</span>
+                <span class="tag">流浪地球</span>
+                <span class="tag">香肠派对</span>
+                <span class="tag">Minecraft</span>
+            </div>
         </div>
-        <img src="img/15.png" class="right" alt="箭头">
     </div>
 
     <!-- QQ空间区域 -->
-    <div class="box box9">
-        <img src="img/2.png" class="list" alt="空间图标">
-        <div>
-            <p>我的QQ空间</p>
+    <div class="qzone-section">
+        <div class="qzone-header">
+            <img src="img/2.png" class="qzone-icon" alt="空间">
+            <span class="qzone-title">QQ空间</span>
+            <span class="qzone-action">分享新鲜事</span>
+            <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
-        <img src="img/15.png" class="right" alt="箭头">
-    </div>
-
-    <!-- 动态故事容器 -->
-    <div class="story-container">
-        <div class="story-item add-story">
-            <img src="img/story_bg.jpg" alt="发表新鲜事">
-        </div>
-        <div class="story-item">
-            <img id="storyImage1" alt="Story Image 1">
-        </div>
-        <div class="story-item">
-            <img id="storyImage2" alt="Story Image 2">
-        </div>
-        <div class="story-item">
-            <img id="storyImage3" alt="Story Image 3">
-        </div>
-        <div class="story-item">
-            <img id="storyImage4" alt="Story Image 4">
+        <div class="qzone-content">
+            <img src="img/二维码.jpg" class="qzone-qr" alt="二维码">
         </div>
     </div>
 
-    <!-- 完善资料区域 -->
-    <div class="box box10">
-        <img src="img/1.png" class="list" alt="资料图标">
-        <div>
-            <p>完善资料，让好友更了解你</p>
-            <p id="p1">去完善</p>
-        </div>
-        <img src="img/15.png" class="right" alt="箭头">
+    <!-- 动态故事容器（隐藏） -->
+    <div class="story-container" style="display:none;">
+        <div class="story-item"><img id="storyImage1" alt=""></div>
+        <div class="story-item"><img id="storyImage2" alt=""></div>
+        <div class="story-item"><img id="storyImage3" alt=""></div>
+        <div class="story-item"><img id="storyImage4" alt=""></div>
     </div>
+
+    <!-- 隐藏的旧元素（保持JS兼容） -->
+    <div class="box box3" style="display:none;"></div>
+    <div class="box box4" style="display:none;"></div>
+    <div class="box box5" style="display:none;"></div>
+    <div class="box box6" style="display:none;"></div>
+    <div class="box box7" style="display:none;"></div>
+    <div class="box box8" style="display:none;"></div>
+    <div class="box box9" style="display:none;"></div>
+    <div class="box box10" style="display:none;"></div>
 
     <!-- 底部按钮区域 -->
     <div class="last">

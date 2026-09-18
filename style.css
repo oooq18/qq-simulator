@@ -1,355 +1,652 @@
-/* ===============================================
-   QQ个人主页 一比一还原样式
-   基于QQ 9.3.65 APK反编译提取
-   =============================================== */
+/* ================================================
+   QQ个人主页 - 深色主题（按真实截图还原）
+   ================================================ */
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  max-width: 480px;
+  margin: 0 auto;
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "微软雅黑", sans-serif;
-  background-color: #ffffff;
-  color: #333333;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
+  padding-bottom: 100px;
 }
 
-img { display: block; }
-ul, li, ol { list-style: none; }
+img {
+  display: block;
+  max-width: 100%;
+}
 
-/* 顶部导航栏 */
+/* ================================================
+   导航栏 - 无标题，透明背景
+   ================================================ */
 .box1 {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 12px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 1000;
-  border-bottom: 0.5px solid rgba(0,0,0,0.05);
+  z-index: 100;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
 }
-.box1 .box1_left,
-.box1 .box1_right .box1_right_div,
+
+.box1_left {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+}
+
+.box1_left img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.box1_right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.box1_right_div,
 .box1_right_div3 {
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
 }
-.box1 .box1_left:active,
-.box1 .box1_right .box1_right_div:active,
-.box1_right_div3:active { background-color: rgba(0,0,0,0.05); }
-.box1 .box1_left img,
-.box1 .box1_right .box1_right_div img,
-.box1_right_div3 img { width: 20px; height: 20px; }
-.box1 .box1_right { display: flex; align-items: center; gap: 4px; }
 
-/* 封面区域 */
+.box1_right_div img,
+.box1_right_div3 img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* ================================================
+   封面区域
+   ================================================ */
 .profile-cover {
-  width: 100%; height: 180px;
-  background: linear-gradient(135deg, #5b86e5 0%, #36d1dc 100%);
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #2d1b4e 0%, #4a2c6a 30%, #6b3d7a 60%, #8b4f8a 100%);
   position: relative;
-  margin-top: 44px;
-}
-.profile-cover::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2));
+  overflow: hidden;
 }
 
-/* 个人信息头部 */
-.box2 {
-  position: relative;
-  background: #ffffff;
-  padding: 0 16px 16px 16px;
-  margin-top: -30px;
-  border-radius: 16px 16px 0 0;
+.profile-cover::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, #1c1c1e);
+}
+
+/* 点赞按钮 */
+.good {
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  padding: 6px 12px;
+  border-radius: 20px;
   z-index: 10;
 }
-.profile-main { display: flex; align-items: flex-start; position: relative; }
-.box2 .avatar {
-  width: 72px; height: 72px;
+
+.good img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.good p {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ================================================
+   资料卡主体 - 深色背景，顶部圆角
+   ================================================ */
+.profile-card {
+  background-color: #1c1c1e;
+  border-radius: 20px 20px 0 0;
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+  padding-bottom: 16px;
+}
+
+/* ================================================
+   个人资料头部
+   ================================================ */
+.box2 {
+  padding: 20px 16px 16px;
+}
+
+.profile-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* 头像 */
+.avatar {
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  border: 3px solid #ffffff;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  margin-right: 12px;
-  margin-top: -36px;
+  border: 2px solid rgba(255,255,255,0.1);
   object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* 用户信息 */
+.user-info {
+  flex: 1;
+  min-width: 0;
+  padding-top: 4px;
+}
+
+.name-status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.name-status-row h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* 状态按钮 */
+.status-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  padding: 4px 10px;
+  border-radius: 12px;
   cursor: pointer;
 }
-.user-info { flex: 1; padding-top: 8px; }
-.name-status-row {
-  display: flex; align-items: center;
-  margin-bottom: 6px; flex-wrap: wrap; gap: 6px;
-}
-.box2 h2 {
-  color: #333333; font-size: 18px; font-weight: 600;
-  margin-right: 8px; line-height: 1.2;
-}
-.box2 button {
-  border: none; display: flex; align-items: center; justify-content: center;
-  border-radius: 10px; font-size: 11px; padding: 2px 8px; height: 20px;
-  background-color: #f2f2f2; color: #666666; cursor: pointer;
-}
-.box2 button img { width: 12px; height: 12px; margin-right: 2px; }
-.personal-details {
-  display: flex; align-items: center;
-  font-size: 12px; color: #999999; margin-bottom: 4px;
-  flex-wrap: wrap; gap: 8px;
-}
-.personal-details span { display: inline-flex; align-items: center; }
-.box2 .good {
-  position: absolute; top: 12px; right: 16px;
-  display: flex; align-items: center;
-  background: rgba(0,0,0,0.5); backdrop-filter: blur(10px);
-  color: #fff; border-radius: 14px; padding: 4px 10px; font-size: 12px; cursor: pointer;
-}
-.box2 .good img { width: 14px; height: 14px; margin-right: 4px; }
-.box2 .good p { font-size: 12px; line-height: 1; }
 
-/* 个性签名 */
-.signature-section {
-  padding: 12px 16px; background: #fff;
-  font-size: 14px; color: #666666; line-height: 1.5;
-  border-bottom: 8px solid #f5f5f5;
+.status-btn img {
+  width: 12px;
+  height: 12px;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
 }
 
-/* 资料卡列表 */
-.box {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; background: #fff;
-  border-bottom: 0.5px solid #ededed;
-  font-size: 14px; cursor: pointer;
-  transition: background-color 0.15s;
-}
-.box:active { background-color: #f5f5f5; }
-.box:last-child { border-bottom: none; }
-.box .list { width: 20px; height: 20px; margin-right: 12px; opacity: 0.6; }
-.box .right { width: 16px; height: 16px; opacity: 0.3; }
-.box div { flex: 1; display: flex; align-items: center; color: #333333; }
-.box div p { color: #333333; font-size: 14px; }
-
-/* QQ号区域 */
-.box3 section { display: flex; align-items: center; }
-.box3 .i2 { width: auto; height: 16px; margin-right: 4px; }
-.box3 .i3 { width: auto; height: 12px; margin-left: 6px; }
-.box3 p { font-size: 14px; color: #333333; font-weight: 500; }
-
-.box5, .box6 { color: #666666; }
-.box5 div p, .box6 div p { color: #666666; font-size: 14px; }
-
-/* 等级会员图标区域 */
-.box7_right {
-  display: flex; align-items: center; justify-content: flex-start !important;
-  flex: 1; gap: 4px;
-}
-.box7_right img { height: 16px; width: auto; margin-right: 2px; }
-.box8 .box7_right img { height: 24px; margin-right: 4px; }
-.level-container {
-  display: inline-flex; align-items: center; height: 16px;
-  font-size: 0; white-space: nowrap; margin-left: 2px;
-}
-.level-container img {
-  height: 16px; width: auto; margin: 0; padding: 0;
-  display: inline-block; vertical-align: middle; margin-right: -2px;
-}
-#dynamicIcon { height: 16px; }
-#vip-icons-container img { display: none; }
-
-/* 故事容器 */
-.story-container {
-  display: none; overflow-x: auto; padding: 12px 16px;
-  background: #fff; border-bottom: 8px solid #f5f5f5;
-  -ms-overflow-style: none; scrollbar-width: none;
-}
-.story-container::-webkit-scrollbar { display: none; }
-.story-container.has-stories { display: flex; }
-.story-item {
-  flex: 0 0 auto; width: 56px; height: 56px;
-  margin-right: 12px; border-radius: 8px; overflow: hidden;
-  position: relative; background-color: #f5f5f5;
-}
-.story-item:not(.add-story) { display: none; }
-.story-item.has-image { display: block; background-color: transparent; }
-.story-item img { width: 100%; height: 100%; object-fit: cover; }
-.add-story {
-  border: 1px dashed #ddd; display: flex; flex-direction: column;
-  justify-content: center; align-items: center; cursor: pointer; background-color: #fafafa;
-}
-.add-story-icon { font-size: 24px; color: #12b7f5; line-height: 1; }
-.add-story p { margin-top: 2px; font-size: 10px; color: #12b7f5; }
-
-/* 完善资料 */
-.box10 { margin-bottom: 80px; }
-.box10 div p:last-child { color: #666666; font-size: 14px; }
-#p1 { color: #999999; font-size: 12px; margin-right: 8px; }
-
-/* 底部按钮 */
-.last {
-  position: fixed; bottom: 0; left: 0; right: 0;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; padding: 12px 16px;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-top: 0.5px solid rgba(0,0,0,0.05);
-  z-index: 1000;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom));
-}
-.last button {
-  flex: 1; height: 40px; border: none; border-radius: 20px;
-  font-size: 15px; font-weight: 500; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: opacity 0.15s;
-}
-.last button:active { opacity: 0.8; }
-.last button:first-child { background-color: #12b7f5; color: #fff; }
-.last button:nth-child(2) { background-color: #f2f2f2; color: #333333; }
-.last button:last-child { background-color: #f2f2f2; color: #333333; flex: 0 0 60px; }
-.last span { display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; }
-.last button:last-child span { font-size: 20px; }
-
-/* 模态框 */
-.modal {
-  display: none; position: fixed; z-index: 2000;
-  left: 0; top: 0; width: 100%; height: 100%;
-  overflow: auto; background-color: rgba(0,0,0,0.5);
-  backdrop-filter: blur(5px);
-}
-.modal-content {
-  background-color: #fff; margin: 10% auto; padding: 20px;
-  border-radius: 12px; width: 85%; max-width: 320px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  animation: modalIn 0.3s ease;
-}
-@keyframes modalIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-.close { color: #ccc; float: right; font-size: 24px; font-weight: 400; cursor: pointer; line-height: 1; }
-.close:hover { color: #666666; }
-
-/* 表单 */
-#editForm label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 14px; color: #333; }
-#editForm input[type="text"],
-#editForm input[type="file"],
-#editForm input[type="number"] {
-  width: 100%; padding: 10px 12px; margin-bottom: 16px;
-  border: 1px solid #e5e5e5; border-radius: 8px;
-  box-sizing: border-box; font-size: 14px;
-}
-#editForm input[type="text"]:focus { outline: none; border-color: #12b7f5; }
-#editForm input[type="submit"] {
-  background-color: #12b7f5; color: white; padding: 12px;
-  border: none; border-radius: 8px; cursor: pointer;
-  font-size: 15px; font-weight: 500; width: 100%;
+.status-btn span {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
 }
 
-/* 选择器 */
-.icon-style-selector, .vip-selector {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
-}
-.icon-style-label, .vip-label {
-  cursor: pointer; border: 2px solid transparent; padding: 6px;
-  border-radius: 8px; display: inline-block; transition: all 0.2s; background: #f5f5f5;
-}
-.icon-style-label:hover, .vip-label:hover { background-color: #eee; }
-input[name="levelIconStyle"]:checked+.icon-style-label,
-input[name="imageSelect"]:checked+.vip-label {
-  border-color: #12b7f5; background-color: rgba(0,153,255,0.1);
-}
-.style-preview { width: 28px; height: 28px; object-fit: contain; }
-.vip-label img { width: 36px; height: 36px; object-fit: contain; }
-input[name="levelIconStyle"], input[name="imageSelect"] { display: none; }
-
-.box4 { display: none !important; }
-
-@media (min-width: 414px) {
-  body { max-width: 414px; margin: 0 auto; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-  .box1, .last { max-width: 414px; left: 50%; transform: translateX(-50%); }
+/* QQ号行 */
+.qq-number-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
 }
 
-/* ===============================================
-   QQ个人主页精确样式修正
-   =============================================== */
+.qq-label {
+  color: rgba(255,255,255,0.5);
+}
 
-/* 导航栏标题 */
-.nav-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.qq-num {
+  color: rgba(255,255,255,0.7);
+}
+
+.id-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: rgba(255,255,255,0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 4px;
+}
+
+.id-badge .i2 {
+  width: 12px;
+  height: 12px;
+}
+
+.id-badge span {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+.id-badge .id-arrow {
+  width: 8px;
+  height: 8px;
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+
+/* 右侧角色立绘 */
+.profile-character {
+  flex-shrink: 0;
+  width: 80px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.profile-character img {
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* ================================================
+   资料行通用样式
+   ================================================ */
+.profile-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  min-height: 44px;
+}
+
+.row-text {
+  font-size: 15px;
+  color: #ffffff;
+  flex: 1;
+}
+
+.row-arrow {
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1);
+  opacity: 0.4;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* 个性签名行 */
+.signature-row {
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.signature-row .row-text {
+  color: rgba(255,255,255,0.9);
+}
+
+/* 性别/生日/星座行 */
+.info-row {
+  justify-content: flex-start;
+  gap: 6px;
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.gender-icon {
+  color: #0a84ff;
+  font-size: 16px;
+}
+
+.gender-text {
+  color: #0a84ff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.info-row .divider {
+  color: rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
+.info-row #age,
+.info-row #province {
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+}
+
+.info-row #city {
+  display: none;
+}
+
+.info-row .row-arrow {
+  margin-left: auto;
+}
+
+/* 等级行 */
+.level-row {
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.level-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.level-icons img {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+}
+
+.level-icons .medal-icon {
+  height: 18px;
+}
+
+/* 会员图标行 */
+.vip-row {
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+}
+
+.vip-row .box7_right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.vip-row .box7_right img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* 标签行 */
+.tags-row {
+  border-top: 0.5px solid rgba(255,255,255,0.08);
+  display: block;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 16px;
+}
+
+/* ================================================
+   QQ空间区域
+   ================================================ */
+.qzone-section {
+  background-color: #1c1c1e;
+  margin-top: 10px;
+  padding: 16px;
+}
+
+.qzone-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.qzone-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.qzone-title {
   font-size: 17px;
   font-weight: 600;
-  color: #333333;
+  color: #ffffff;
+  flex: 1;
 }
 
-/* 导航栏精确高度 */
-.box1 {
-  height: 50px !important;
-  padding: 0 8px !important;
+.qzone-action {
+  font-size: 14px;
+  color: #0a84ff;
 }
 
-/* 封面高度 - QQ个人主页封面约200px */
-.profile-cover {
-  height: 200px !important;
-  margin-top: 50px !important;
+.qzone-content {
+  display: flex;
+  gap: 10px;
 }
 
-/* 头像精确尺寸 - QQ头像约70px */
-.box2 .avatar {
-  width: 70px !important;
-  height: 70px !important;
-  margin-top: -35px !important;
-  border-width: 2px !important;
+.qzone-qr {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
-/* 昵称精确字号 */
-.box2 h2 {
-  font-size: 17px !important;
-  font-weight: 600 !important;
+/* ================================================
+   底部按钮区域
+   ================================================ */
+.last {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, #1c1c1e 80%, transparent);
+  z-index: 100;
 }
 
-/* QQ号字号 */
-.box3 p {
-  font-size: 13px !important;
-  color: #666666 !important;
-}
-
-/* 资料卡单元格精确高度 */
-.box {
-  padding: 13px 16px !important;
-  min-height: 48px;
-}
-
-/* 底部按钮精确样式 */
 .last button {
-  height: 42px !important;
-  border-radius: 21px !important;
-  font-size: 16px !important;
+  flex: 1;
+  height: 44px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.last button:first-child {
-  background-color: #12b7f5 !important;
+.last button:first-child,
+.last button:nth-child(2) {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
 }
 
-/* 点赞按钮位置 */
-.box2 .good {
-  top: auto !important;
-  bottom: 16px !important;
-  right: 16px !important;
+.last button:last-child {
+  background: #0a84ff;
+  border-color: #0a84ff;
+  color: #ffffff;
+  flex: 1.2;
 }
 
-/* 个性签名 */
-.signature-section {
-  font-size: 14px !important;
-  color: #666666 !important;
-  padding: 12px 16px !important;
+/* ================================================
+   等级图标容器（保留原有功能）
+   ================================================ */
+.qq-level-icons {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 18px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0 !important;
+  white-space: nowrap !important;
+}
+
+.qq-level-icons img {
+  height: 18px !important;
+  width: 18px !important;
+  display: inline-block !important;
+  padding: 0 !important;
+  border: none !important;
+  vertical-align: middle !important;
+}
+
+.qq-level-icons span {
+  margin-right: 2px !important;
+  display: inline-block !important;
+  font-size: 0 !important;
+}
+
+/* ================================================
+   编辑资料弹窗
+   ================================================ */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #1c1c1e;
+  border-radius: 16px;
+  padding: 24px;
+  width: 90%;
+  max-width: 360px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: #ffffff;
+}
+
+.modal-content .close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.5);
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.modal-content input[type="submit"] {
+  margin-top: 20px;
+  background: #0a84ff;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-content h3 {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* VIP图标自定义区域 */
+#vip-icon-customizer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#vip-icon-customizer h4 {
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 10px;
+}
+
+#vip-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+#vip-icons-container label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255,255,255,0.05);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0;
+}
+
+#vip-icons-container img {
+  height: 20px;
+  width: auto;
+}
+
+#vip-icon-checkboxes {
+  display: none;
+}
+
+/* 隐藏旧的box样式 */
+.box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10 {
+  display: none !important;
+}
+
+.story-container {
+  display: none !important;
+}
+
+/* 响应式 */
+@media (max-width: 360px) {
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .name-status-row h2 {
+    font-size: 18px;
+  }
+  .profile-character {
+    width: 60px;
+    height: 100px;
+  }
 }
