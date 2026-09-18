@@ -342,6 +342,7 @@
             <span class="divider">|</span>
             <span id="age">3月13日</span>
             <span id="province">双鱼座</span>
+            <span id="city" style="display:none;"></span>
             <img src="img/15.png" class="row-arrow" alt="箭头">
         </div>
 
@@ -435,10 +436,10 @@
         <button>
             <span>个性名片</span>
         </button>
-        <button>
+        <button id="editButton">
             <span>编辑资料</span>
         </button>
-        <button id="editButton">
+        <button>
             <span>发消息</span>
         </button>
     </div>
@@ -1259,7 +1260,7 @@
         function updateVipIconsDisplay() {
             const selectedIcons = vipIconState.selectedIcons;
             const selectedVersions = vipIconState.selectedIconVersions;
-            const box8Container = document.querySelector('.box.box8');
+            const box8Container = document.querySelector('.vip-row');
 
             // 控制整个容器的显示/隐藏
             if (box8Container) {
@@ -1329,7 +1330,7 @@
             });
             
             // 获取容器，准备重新排列元素
-            const container = document.querySelector('.box8 .box7_right');
+            const container = document.getElementById('vip-icons-container');
             if (!container) return;
             
             // 收集所有需要显示的元素
@@ -1498,15 +1499,15 @@
             // 不再从localStorage加载用户数据，而是设置默认值
             const userData = {
                 avatar: null,
-                name: "Ta",
-                good: "66666",
-                qqNumber: "123456",
+                name: "L.",
+                good: "14",
+                qqNumber: "3041076065",
                 gender: "男",
-                age: "18",
-                province: "广东",
-                city: "广州",
-                personalSign: "",
-                qqLevel: "50",
+                age: "3月13日",
+                province: "双鱼座",
+                city: "",
+                personalSign: "行",
+                qqLevel: "29",
                 levelIconStyle: "1",
                 selectedImage: "img1",
                 selectedDynamicIcon: "./img/9.gif",
@@ -1748,14 +1749,14 @@
                 age: document.getElementById("age").textContent || "",
                 province: document.getElementById("province").textContent || "广东",
                 city: document.getElementById("city").textContent || "深圳",
-                personalSign: "",
-                qqLevel: "50",
+                personalSign: "行",
+                qqLevel: "29",
                 levelIconStyle: "1",
                 selectedDynamicIcon: document.getElementById("dynamicIcon").src || "./img/9.gif",
                 selectedImage: "img1",
                 lhIcon: document.getElementById("img19").src || "./img/35.png",
                 selectedEnergyIcon: document.getElementById("energyIcon").src || "./img/33.png",
-                showBox7: document.querySelector('.box.box7').style.display !== 'none'
+                showBox7: true
             };
 
             // 填充表单字段
@@ -2036,7 +2037,7 @@
          * 更新等级区域显示状态
          */
         function updateBox7Visibility(isVisible) {
-            const box7Element = document.querySelector('.box.box7');
+            const box7Element = document.querySelector('.level-row');
             if (box7Element) {
                 box7Element.style.display = isVisible ? 'flex' : 'none';
             }
